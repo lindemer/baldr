@@ -1,0 +1,1 @@
+from .qr import Qr
