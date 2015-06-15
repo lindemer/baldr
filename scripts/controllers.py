@@ -256,7 +256,7 @@ class CascadeInteractive(Controller):
 	def get_pid(self, pid):
 		error = pid['reference'] - pid['state']
 		P = pid['Kp'] *  error
-		D = pid['Kd'] * (error - pid['derivator']) * self.time_step
+		D = pid['Kd'] * (error - pid['derivator']) / self.time_step
 		pid['derivator'] = error
 
 		pid['integrator'] += error
@@ -399,7 +399,7 @@ class CascadeTracking(Controller):
 	def get_pid(self, pid):
 		error = pid['reference'] - pid['state']
 		P = pid['Kp'] *  error
-		D = pid['Kd'] * (error - pid['derivator']) * self.time_step
+		D = pid['Kd'] * (error - pid['derivator']) / self.time_step
 		pid['derivator'] = error
 
 		pid['integrator'] += error
