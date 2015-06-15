@@ -151,49 +151,49 @@ class CascadeInteractive(Controller):
 		self.time_step = 0.01
 
 		self.pids = {}
-		self.pids['u1A'] = dict(Kp=2.0, Ki=0.5, Kd=3.0,
+		self.pids['u1A'] = dict(Kp=2.0, Ki=0.5, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=(0, 10),
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=self.m*self.g)
-		self.pids['u3A'] = dict(Kp=2.0, Ki=0.0, Kd=2.0,
+		self.pids['u3A'] = dict(Kp=2.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=None,
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=10*self.Ix)
-		self.pids['u3B'] = dict(Kp=2.0, Ki=0.0, Kd=4.0,
+		self.pids['u3B'] = dict(Kp=2.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=(-np.pi, np.pi),
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=10)
-		self.pids['u3C'] = dict(Kp=4.0, Ki=0.0, Kd=2.0,
+		self.pids['u3C'] = dict(Kp=4.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=(-np.pi/4, np.pi/4),
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=1/self.g)
-		self.pids['u2A'] = dict(Kp=2.0, Ki=0.0, Kd=2.0,
+		self.pids['u2A'] = dict(Kp=2.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=None,
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=10*self.Iy)
-		self.pids['u2B'] = dict(Kp=2.0, Ki=0.0, Kd=4.0,
+		self.pids['u2B'] = dict(Kp=2.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=(-np.pi, np.pi),
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=10)
-		self.pids['u2C'] = dict(Kp=4.0, Ki=0.0, Kd=2.0,
+		self.pids['u2C'] = dict(Kp=4.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=(-np.pi/4, np.pi/4),
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=1/self.g)
-		self.pids['u4A'] = dict(Kp=2.0, Ki=0.5, Kd=2.5,
+		self.pids['u4A'] = dict(Kp=2.0, Ki=0.5, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=None,
 					state=0, reference=0,
@@ -290,7 +290,7 @@ class CascadeTracking(Controller):
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=self.m*self.g)
-		self.pids['u3A'] = dict(Kp=2.0, Ki=0.0, Kd=2.0,
+		self.pids['u3A'] = dict(Kp=2.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=None,
 					state=0, reference=0,
@@ -308,13 +308,13 @@ class CascadeTracking(Controller):
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=1/self.g)
-		self.pids['u3D'] = dict(Kp=4.0, Ki=0.0, Kd=2.0,
+		self.pids['u3D'] = dict(Kp=4.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=None,
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=1)
-		self.pids['u2A'] = dict(Kp=2.0, Ki=0.0, Kd=2.0,
+		self.pids['u2A'] = dict(Kp=2.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=None,
 					state=0, reference=0,
