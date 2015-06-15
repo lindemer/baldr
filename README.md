@@ -3,7 +3,7 @@ A flight simulator for quadrotor drones written entirely in Python. This is curr
 
 INSTALLATION INSTRUCTIONS:
 
-1. Install the required Python libraries if you don't already have them (the MORSE robotics simulator requires Python3):
+1. Install the required Python libraries if you don't already have them (the MORSE robotics simulator requires Python3):\n
 		$ sudo apt-get install python3 python3-scipy python3-numpy python3-matplotlib
 
 2. Install MORSE with the command:
