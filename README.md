@@ -1,6 +1,8 @@
 # baldr
 A flight simulator for quadrotor drones written entirely in Python. This is currently a Linux-only project. baldr is an extension for the MORSE robotics simulator: https://www.openrobots.org/wiki/morse/.
 
+![alt tag](http://i58.tinypic.com/wrki88.jpg)
+
 INSTALLATION INSTRUCTIONS:
 
 1. Install the required Python libraries if you don't already have them (the MORSE robotics simulator requires Python3):
