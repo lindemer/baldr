@@ -12,7 +12,7 @@ INSTALLATION INSTRUCTIONS:
 
 3. You need to create a simulation called "baldr" in MORSE. Do this with the command:
 	$ morse create baldr.
-	This will create a folder in your Home directory called ~/baldr with some MORSE simulation files in it, and it will also add a line to the ~/.morse/config file to identify the name "baldr" as a MORSE simulation.)
+	This will create a folder in your Home directory called ~/baldr with some MORSE simulation files in it, and it will also add a line to the ~/.morse/config file to identify the name "baldr" as a MORSE simulation.
 
 4. Download this repository and replace all the contents of the new ~/baldr folder with the contents of the repository you just downloaded.
 
