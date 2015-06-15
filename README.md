@@ -3,12 +3,12 @@ A flight simulator for quadrotor drones written entirely in Python. This is curr
 
 INSTALLATION INSTRUCTIONS:
 
-1. Install the required Python libraries if you don't already have them (the MORSE robotics simulator requires Python3):\n
+1. Install the required Python libraries if you don't already have them (the MORSE robotics simulator requires Python3):
 		$ sudo apt-get install python3 python3-scipy python3-numpy python3-matplotlib
 
 2. Install MORSE with the command:
 		$ sudo apt-get install morse-simulator
-		 If you don't already have Blender, this should install it automatically. Use the default settings (ie. make the default folder for simulation files your Home folder).
+		If you don't already have Blender, this should install it automatically. Use the default settings (ie. make the default folder for simulation files your Home folder).
 
 3. You need to create a simulation called "baldr" in MORSE. Do this with the command:
 		$ morse create baldr
