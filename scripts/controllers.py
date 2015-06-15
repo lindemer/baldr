@@ -148,6 +148,7 @@ class DiscretePid(Controller):
 class CascadeInteractive(Controller):
 	def __init__(self):
 		Controller.__init__(self)
+		self.time_step = 0.01
 
 		self.pids = {}
 		self.pids['u1A'] = dict(Kp=2.0, Ki=0.5, Kd=3.0,
@@ -255,7 +256,7 @@ class CascadeInteractive(Controller):
 	def get_pid(self, pid):
 		error = pid['reference'] - pid['state']
 		P = pid['Kp'] *  error
-		D = pid['Kd'] * (error - pid['derivator'])
+		D = pid['Kd'] * (error - pid['derivator']) * self.time_step
 		pid['derivator'] = error
 
 		pid['integrator'] += error
@@ -274,15 +275,16 @@ class CascadeInteractive(Controller):
 class CascadeTracking(Controller):
 	def __init__(self):
 		Controller.__init__(self)
+		self.time_step = 0.01
 
 		self.pids = {}
-		self.pids['u1A'] = dict(Kp=2.0, Ki=0.0, Kd=3.0,
+		self.pids['u1A'] = dict(Kp=2.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=(0, 10),
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=1)
-		self.pids['u1B'] = dict(Kp=2.0, Ki=0.0, Kd=3.0,
+		self.pids['u1B'] = dict(Kp=2.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=(0, 10),
 					state=0, reference=0,
@@ -294,13 +296,13 @@ class CascadeTracking(Controller):
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=10*self.Ix)
-		self.pids['u3B'] = dict(Kp=2.0, Ki=0.0, Kd=4.0,
+		self.pids['u3B'] = dict(Kp=2.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=(-np.pi, np.pi),
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=10)
-		self.pids['u3C'] = dict(Kp=4.0, Ki=0.0, Kd=2.0,
+		self.pids['u3C'] = dict(Kp=4.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=(-np.pi/4, np.pi/4),
 					state=0, reference=0,
@@ -318,31 +320,31 @@ class CascadeTracking(Controller):
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=10*self.Iy)
-		self.pids['u2B'] = dict(Kp=2.0, Ki=0.0, Kd=4.0,
+		self.pids['u2B'] = dict(Kp=2.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=(-np.pi, np.pi),
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=10)
-		self.pids['u2C'] = dict(Kp=4.0, Ki=0.0, Kd=2.0,
+		self.pids['u2C'] = dict(Kp=4.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=(-np.pi/4, np.pi/4),
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=1/self.g)
-		self.pids['u2D'] = dict(Kp=4.0, Ki=0.0, Kd=2.0,
+		self.pids['u2D'] = dict(Kp=4.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=None,
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=1)
-		self.pids['u4A'] = dict(Kp=2.0, Ki=0.5, Kd=2.5,
+		self.pids['u4A'] = dict(Kp=2.0, Ki=0.5, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=None,
 					state=0, reference=0,
 					derivator=0, integrator=0,
 					gain_factor=10*self.Iz)
-		self.pids['u4B'] = dict(Kp=2.0, Ki=0.0, Kd=2.5,
+		self.pids['u4B'] = dict(Kp=2.0, Ki=0.0, Kd=0.0,
 					integrator_limit=(-20, 20),
 					pid_limit=None,
 					state=0, reference=0,
@@ -397,7 +399,7 @@ class CascadeTracking(Controller):
 	def get_pid(self, pid):
 		error = pid['reference'] - pid['state']
 		P = pid['Kp'] *  error
-		D = pid['Kd'] * (error - pid['derivator'])
+		D = pid['Kd'] * (error - pid['derivator']) * self.time_step
 		pid['derivator'] = error
 
 		pid['integrator'] += error
@@ -412,4 +414,3 @@ class CascadeTracking(Controller):
 			elif PID > pid['pid_limit'][1]: PID = pid['pid_limit'][1]
 
 		return PID
-
