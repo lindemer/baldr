@@ -48,11 +48,10 @@ class Model():
 		T2 =          - 0.5 * q + 0.25 * r - 0.25 * s
 		T3 =  0.5 * p +           0.25 * r + 0.25 * s
 		T4 =            0.5 * q + 0.25 * r - 0.25 * s
-		self.omega = np.array([0.0, 0.0, 0.0, 0.0])
-		self.omega[0] = np.sqrt(np.abs(T1) / self.c)
-		self.omega[1] = np.sqrt(np.abs(T2) / self.c)
-		self.omega[2] = np.sqrt(np.abs(T3) / self.c)
-		self.omega[3] = np.sqrt(np.abs(T4) / self.c)
+		self.omega = np.array([	np.sqrt(np.abs(T1) / self.c),
+					np.sqrt(np.abs(T2) / self.c),
+					np.sqrt(np.abs(T3) / self.c),
+					np.sqrt(np.abs(T4) / self.c)	])
 
 	def get_omega(self):
 		return self.omega
