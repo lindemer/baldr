@@ -174,7 +174,7 @@ class Trajectory1D:
 			 [ ...            ... ]]
 		Omitted derivatives will be left free, and any 
 		derivatives up to and including the objective 
-		(der) derivative will be made continous on the 
+		(der) derivative will be made continuous on the 
 		waypoints.
 		'''
 
@@ -238,7 +238,7 @@ class Trajectory1D:
 			# input values: specified waypoint derivatives
 			d[0].extend(self.wp[i])
 
-			# None: unspecificed waypoint derivatives
+			# None: unspecified waypoint derivatives
 			if len(self.wp[i]) < (self.match + 1):
 				d[0].extend([None] * ((self.match + 1) - len(self.wp[i])))
 

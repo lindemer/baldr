@@ -13,7 +13,7 @@ class Model():
 		self.g 		= 9.81					# acceleration of gravity [m/s^2]
 		self.Ix 	= 6.228e-3				# longitudinal inertia [kgm^2]
 		self.Iy 	= 6.228e-3				# lateral inertia [kgm^2]
-		self.Iz		= 1.121e-3				# vertial inertia [kgm^2]
+		self.Iz		= 1.121e-3				# vertical inertia [kgm^2]
 		self.Jr  	= 6e-5					# rotor inertia [kgm^2]
 		self.l   	= 0.232					# blade length [m]
 		self.rho 	= 1.293					# air density [kgm^-3]
