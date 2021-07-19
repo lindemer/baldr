@@ -333,7 +333,7 @@ class Baldr():
 		if self.get_gui_state() and not self.simulation_isrunning:
 			# if a simulator and an integrator have been selected
 			if self.params['simulator']['value'] and self.params['integrator']['value']:
-				# if bspline is the selcted trajectory, then a file must be loaded
+				# if bspline is the selected trajectory, then a file must be loaded
 				if self.params['trajectory']['value'] == 'custom' and self.open_filename:
 					self.enable(self.initialize_button)
 				elif self.params['trajectory']['value'] != 'custom':

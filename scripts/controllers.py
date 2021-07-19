@@ -15,7 +15,7 @@ class Controller():
 		self.g = 9.81				# acceleration of gravity [m/s^2]
 		self.Ix = 6.228e-3			# longitudinal inertia [kgm^2]
 		self.Iy = 6.228e-3			# lateral inertia [kgm^2]
-		self.Iz = 1.121e-3			# vertial inertia [kgm^2]
+		self.Iz = 1.121e-3			# vertical inertia [kgm^2]
 
 		# actuator values
 		self.u  = np.array([0.0, 0.0, 0.0, 0.0])		# actual
